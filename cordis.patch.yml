@@ -1,0 +1,14 @@
+- insert:
+    - id: dsh-screen-control
+      name: dsh-screen-control
+      config:
+        # Screen state while tasks run: keep-awake (display on) | display-off (display may go dark, system stays running).
+        mode: keep-awake
+        # Automatically hold the wake lock while tasks run.
+        auto: true
+        # Seconds to keep the lock after the last task finishes before releasing.
+        graceSeconds: 60
+        # On display-off, also blank the screen immediately (pmset displaysleepnow, no sudo).
+        displayOffNow: false
+        # Log mode switches and lock acquire/release to the plugin log.
+        auditLog: true
