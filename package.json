@@ -1,0 +1,59 @@
+{
+  "name": "dsh-screen-control",
+  "version": "1.0.0",
+  "description": "任务运行期间控制 Mac 屏幕状态：常亮模式保持屏幕不熄；黑屏保活模式允许屏幕熄灭，但系统与所有进程继续运行，绝不挂起进程、不让系统睡眠或关机。任务结束后按可配置宽限期释放唤醒锁，系统按自身设置自然睡眠。仅 macOS 可用，通过 /screen 指令或 screen_control 工具操作。",
+  "type": "module",
+  "main": "./index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jyz48prsbr-netizen/dsh-screen-control.git"
+  },
+  "homepage": "https://github.com/jyz48prsbr-netizen/dsh-screen-control#readme",
+  "bugs": {
+    "url": "https://github.com/jyz48prsbr-netizen/dsh-screen-control/issues"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=22.0.0",
+    "dsh": ">=0.2.0-rc.1 <0.3.0-0"
+  },
+  "keywords": [
+    "deepseek-harness",
+    "dsh",
+    "dsh-plugin",
+    "keep-awake",
+    "screen",
+    "caffeinate",
+    "macos"
+  ],
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "cordis.patch.yml",
+    "README.md",
+    "locale/*.json",
+    "icon.svg",
+    "docs"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": ["@deepseek-ai/dsh-client-ui-settings", "@deepseek-ai/dsh-client-connection"]
+    },
+    "compatibility": {
+      "dsh": ">=0.2.0-rc.1 <0.3.0-0"
+    }
+  }
+}
