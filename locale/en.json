@@ -1,0 +1,7 @@
+{
+  "meta": {
+    "title": "Screen state control",
+    "description": "Controls the Mac's screen state while tasks run: keep-awake mode holds the display on; display-off mode lets the display go dark while the system and every process keep running. It never suspends processes, never sleeps or shuts down the machine. After the last task it releases the wake lock following a configurable grace period, and the machine then sleeps by its own settings. macOS only; operate via the /screen command or the screen_control tool.",
+    "detail": "docs/DETAIL.md"
+  }
+}
